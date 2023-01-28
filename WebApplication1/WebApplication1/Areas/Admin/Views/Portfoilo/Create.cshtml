@@ -1,0 +1,31 @@
+﻿@model PortfolioPostVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">reate portfoilo</h4>
+            <div asp-validation-summary="ModelOnly" class="alert-dismissable alert-danger">
+
+            </div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="AlternativeText"></label>
+                    <input asp-for="AlternativeText" class="form-control" placeholder="AlternativeText">
+                    <span asp-validation-for="AlternativeText" class="text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="formFile">Email address</label>
+                    <input asp-for="formFile" class="form-control" accept="image/*">
+                    <span asp-validation-for="formFile" class="text text-danger"></span>
+
+                </div>
+               
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button asp-action="Index" asp-controller="Portfoilo" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

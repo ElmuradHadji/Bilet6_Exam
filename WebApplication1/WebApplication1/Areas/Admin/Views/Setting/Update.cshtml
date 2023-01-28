@@ -1,0 +1,38 @@
+﻿@model SettingUpdateVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">reate portfoilo</h4>
+            <div asp-validation-summary="ModelOnly" class="alert-dismissable alert-danger">
+            </div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="settingPostVM.Adress"></label>
+                    <input asp-for="settingPostVM.Adress" value="@Model.settingGetVM.Adress" class="form-control" placeholder="Adress">
+                    <span asp-validation-for="settingPostVM.Adress" class="text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="settingPostVM.Year"></label>
+                    <input asp-for="settingPostVM.Year" placeholder="Year" class="form-control" >
+                    <span asp-validation-for="settingPostVM.Year" class="text text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="settingPostVM.Logo"></label>
+                    <input asp-for="settingPostVM.Logo" placeholder="Logo" class="form-control" >
+                    <span asp-validation-for="settingPostVM.Logo" class="text text-danger"></span>
+
+                </div>
+                <input hidden asp-for="settingGetVM.Id" />
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button asp-action="Index" asp-controller="Portfoilo" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

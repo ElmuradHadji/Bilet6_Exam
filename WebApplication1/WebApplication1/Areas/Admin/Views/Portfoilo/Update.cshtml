@@ -1,0 +1,37 @@
+﻿@model PortfolioUpdateVM 
+ 
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">reate portfoilo</h4>
+            <div asp-validation-summary="ModelOnly" class="alert-dismissable alert-danger">
+
+            </div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="portfolioPostVM.AlternativeText"></label>
+                    <input asp-for="portfolioPostVM.AlternativeText" value="@Model.portfolioGetVM.AlternativeText" class="form-control" placeholder="AlternativeText">
+                    <span asp-validation-for="portfolioPostVM.AlternativeText" class="text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="portfolioPostVM.formFile"></label>
+                    <input asp-for="portfolioPostVM.formFile" class="form-control" accept="image/*">
+                    <span asp-validation-for="portfolioPostVM.formFile" class="text text-danger"></span>
+
+                </div>
+                <input hidden asp-for="portfolioGetVM.Id" />
+                <input hidden asp-for="portfolioGetVM.Image" />
+                <div class="mt-2 mb-4" >
+                    <img style="width:250px;" src="~/assets/img/@Model.portfolioGetVM.Image" />
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button asp-action="Index" asp-controller="Portfoilo" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
